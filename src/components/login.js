@@ -11,7 +11,12 @@ export default function LoginComponent(){
     const handleSubmit=async(e)=>{
         e.preventDefault()
        await axios.post("http://localhost:4000/auth/login",{email:email,password:password}).then((res)=>{
-            
+        if(res.status==200){
+            localStorage.setItem("token",res.body)
+        }
+        else{
+            alert(res.data)
+        }
         }).catch(error=>{
             alert(error.message)
         })

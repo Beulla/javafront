@@ -10,7 +10,13 @@ export default function RegisterComponent(){
     const handleSubmit=async(e)=>{
         e.preventDefault()
         await axios.post("http://localhost:4000/auth/register",{email,username,password}).then((res)=>{
-            alert(res.data)
+            if(res.data=="account created successfully"){
+                console.log(res.data)
+                localStorage.setItem("token",res.body)
+            }
+            else{
+                alert(res.data)
+            }
         }).catch((err)=>{
             alert(err.message)
         })

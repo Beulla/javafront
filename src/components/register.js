@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import "../styles/registerStyles.css"
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import axios from "axios";
 
 export default function RegisterComponent(){
@@ -12,7 +12,8 @@ export default function RegisterComponent(){
         await axios.post("http://localhost:4000/auth/register",{email,username,password}).then((res)=>{
             if(res.data=="account created successfully"){
                 console.log(res.data)
-                localStorage.setItem("token",res.body)
+                window.location.href="/login"
+                
             }
             else{
                 alert(res.data)

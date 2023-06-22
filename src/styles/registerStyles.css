@@ -4,18 +4,23 @@
     border-radius: 1em;
     margin-top: 2%;
     padding-left: 7%;
-    margin-left: -4%;
+    margin-left: 16%;
 }
 .form{
     border: 1px solid gray;
-    width: 45%;
-    margin-left: 30%;
+    width: 60%;
+    margin-left: 20%;
     margin-top: 5%;
     border-radius: 1em;
     padding-top: 5%;
+    justify-content: center;
+    margin-bottom: 3%;
 }
 #form1{
     height: 100%;
+}
+#fo{
+    width: 50%;
 }
 #regspan{
     color: black;
@@ -35,8 +40,9 @@
 #submit1{
     background-color: #1E192E;
     border-color: #1E192E;
-    margin-left: 25%;
+    margin-left: 20%;
     margin-top: 3%;
+    margin-bottom: 1%;
 }
 #already{
     display: block;
@@ -45,4 +51,64 @@
     margin-bottom: 15%;
     color: black;
     text-decoration: none;
+}
+.table{
+    margin-left: 3%;
+    border: 1px solid black;
+    margin-top: 3%;
+    overflow-x: auto;
+    width: 100%;
+}
+.thisTable{
+    width: 100%;
+}
+.sidebar{
+    width: 30%;
+    background-color: #1E192E;
+    margin-left: -11.5%;
+    height: 41.8em;
+}
+#submit2{
+    float: right;
+    margin-right: 4%;
+    margin-top: 4%;
+    width: 15%;
+    background-color: #1E192E;
+    margin-bottom: 3%;
+}
+.container{
+    display: flex;
+    width: 100%;
+}
+#span1{
+    display: block;
+    color: white;
+    margin-top: 30%;
+    margin-left: 15%;
+}
+#span2{
+    color: white;
+    margin-top: 40em;
+    margin-left: 15%;   
+}
+#li{
+    color: white;
+    text-decoration: none;
+}
+#li2{
+    color: white;
+    text-decoration: none;
+}
+#controls{
+    display: flex;
+}
+.butto{
+    background-color: #1E192E;
+    margin-left: 10%;
+}
+.control1{
+    margin-left: -4%;
+}
+#control2{
+    margin-left: -4%;
 }

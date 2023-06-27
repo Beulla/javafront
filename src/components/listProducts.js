@@ -49,22 +49,44 @@ const ListOfProducts = () => {
 
   return (
     <div>
-      <h2>List of Products</h2>
+      <h4 className='text-center mb-2'>List of Products</h4>
       {products.length === 0 ? (
         <p>No products found.</p>
       ) : (
-        <ul>
-          {products.map((product) => (
-            <li key={product.id}>
-              {product.code} - {product.name}
-              <button id="this_but"
-              onClick={() => addToCart(product.id)}>
-              <i class="fas fa-shopping-cart"></i>
-              </button>
-            </li>
-          ))}
-        </ul>
+
+        <div className='tables'>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Add to cart</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((product) => (
+
+                <tr key={product.id}>
+                  <th scope="row">{product.id}</th>
+                  <td>{product.name}</td>
+                  <td>{product.price}</td>
+                  <td>
+                    <button id="this_but"
+                      onClick={() => addToCart(product.id)}>
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+
+            </tbody>
+          </table>
+        </div>
       )}
+
+
+
     </div>
   );
 };

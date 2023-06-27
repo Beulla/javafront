@@ -19,8 +19,8 @@ export default function LoginComponent() {
       if (response.status === 200) {
         const token = response.data;
         Cookies.set("token", token);
-        navigate("/list");
-      } else if(response.status===401) {
+        navigate("/products");
+      } else if (response.status === 401) {
         alert("wrong username or password");
       }
     } catch (error) {
@@ -29,15 +29,16 @@ export default function LoginComponent() {
   };
 
   return (
-    <div id="form1">
-      <form className="form" id="fo">
+    <div id="form1" className="container mb-8">
+      <form className="form">
+        <h5 className="text-center mb-2">Kalim Online Supermarket</h5>
         <span id="regspan">Log into Account</span>
         <div id="div1">
           <div className="form-group formsgroup1">
             <i className="fas fa-envelope icons1"></i>
             <input
               type="username"
-              className="form-control contol2"
+              className="form-control control1"
               id="control2"
               aria-describedby="usernameHelp"
               placeholder="Username"
@@ -56,15 +57,11 @@ export default function LoginComponent() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button
-            type="submit"
-            className="btn btn-primary"
-            id="submit1"
-            onClick={handleSubmit}
-          >
-            Login
-          </button>
+          <div className="form-group formsgroup1">
+            <button type="submit" className="form-control btn btn-primary " id="submit1" onClick={handleSubmit}>Login</button>
+          </div>
         </div>
+        <br />
       </form>
     </div>
   );

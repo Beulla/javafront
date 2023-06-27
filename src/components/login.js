@@ -5,23 +5,23 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 export default function LoginComponent() {
-  const [email, setEmail] = useState("");
+  const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/auth/login", {
-        email: email,
+      const response = await axios.post("http://localhost:8080/api/auth/signin", {
+        username: username,
         password: password,
       });
       if (response.status === 200) {
         const token = response.data;
         Cookies.set("token", token);
         navigate("/list");
-      } else {
-        alert(response.data);
+      } else if(response.status===401) {
+        alert("wrong username or password");
       }
     } catch (error) {
       alert(error.message);
@@ -36,13 +36,13 @@ export default function LoginComponent() {
           <div className="form-group formsgroup1">
             <i className="fas fa-envelope icons1"></i>
             <input
-              type="email"
+              type="username"
               className="form-control contol2"
               id="control2"
-              aria-describedby="emailHelp"
+              aria-describedby="usernameHelp"
               placeholder="Username"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={username}
+              onChange={(e) => setusername(e.target.value)}
             />
           </div>
           <div className="form-group formsgroup1">

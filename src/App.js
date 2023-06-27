@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate, useRoutes } from "rea
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import ListPage from "./pages/listPage";
+import ListProductspage from "./pages/ListProductpage";
 import Cookies from "js-cookie";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState("");
@@ -22,8 +23,10 @@ return(
   <Router>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<PrivateRoute isLoggedIn={isLoggedIn}><RegisterPage /></PrivateRoute>} />
-        <Route path="/list" element={<PrivateRoute isLoggedIn={isLoggedIn}><ListPage /></PrivateRoute>} />
+        <Route path="/register" element={<RegisterPage />}/>
+        <Route path="/list" element={<ListPage />}/>
+        <Route path="/listProduct" element={<ListProductspage />}/>
+        {/* <Route path="/list" element={<PrivateRoute isLoggedIn={isLoggedIn}><ListPage /></PrivateRoute>} /> */}
         
       </Routes>
     </Router>
